@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'email', 'password',
     ];
 
     /**
@@ -26,4 +26,34 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the staff profile associated with user.
+     */
+    public function staff()
+    {
+        return $this->hasOne(Staff::class);
+    }
+
+    /**
+     * Get the name of the user.
+     *
+     * @param  string $value
+     * @return string
+     */
+    public function getNameAttribute($value)
+    {
+        return $this->staff->name;
+    }
+
+    /**
+     * Get the role name of the user.
+     *
+     * @param  string $value
+     * @return string
+     */
+    public function getRoleAttribute($value)
+    {
+        return $this->staff->role->name;
+    }
 }
