@@ -4,15 +4,20 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+class Access extends Model
 {
     /**
-     * Manage users & sales report.
+     * Manage various settings.
      */
     const ADMIN = 'Pengelola';
 
     /**
-     * Manage orders (incoming).
+     * Manage sales report.
+     */
+    const SALES = 'Laporan';
+
+    /**
+     * Manage incoming orders.
      */
     const WAITER = 'Pelayan';
 
@@ -22,7 +27,7 @@ class Role extends Model
     const CASHIER = 'Kasir';
 
     /**
-     * Manage orders to be served (kitchen / bar).
+     * Process orders (kitchen / bar).
      */
     const MONITOR = 'Monitor';
 
@@ -43,8 +48,8 @@ class Role extends Model
     /**
      * Get all staffs of a certain role.
      */
-    public function staffs()
+    public function users()
     {
-        return $this->hasMany(Staff::class);
+        return $this->belongsToMany(User::class);
     }
 }

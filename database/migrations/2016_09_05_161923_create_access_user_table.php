@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStaffTable extends Migration
+class CreateAccessUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,20 @@ class CreateStaffTable extends Migration
      */
     public function up()
     {
-        Schema::create('staff', function (Blueprint $table) {
+        Schema::create('access_user', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->integer('role_id')->unsigned();
-            $table->string('name', 30);
+            $table->integer('access_id')->unsigned();
             $table->timestamps();
         });
 
-        Schema::table('staff', function (Blueprint $table) {
+        Schema::table('access_user', function (Blueprint $table) {
             $table->foreign('user_id')
                 ->references('id')->on('users')
                 ->onDelete('cascade')->onUpdate('cascade');
 
-            $table->foreign('role_id')
-                ->references('id')->on('roles')
+            $table->foreign('access_id')
+                ->references('id')->on('accesses')
                 ->onDelete('restrict')->onUpdate('cascade');
         });
     }
@@ -39,6 +38,6 @@ class CreateStaffTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('staff');
+        Schema::dropIfExists('access_user');
     }
 }

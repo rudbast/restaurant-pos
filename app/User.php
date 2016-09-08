@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'email', 'password',
+        'username', 'name', 'email', 'password',
     ];
 
     /**
@@ -28,32 +28,10 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get the staff profile associated with user.
+     * Get the accesses of the associated user.
      */
-    public function staff()
+    public function accesses()
     {
-        return $this->hasOne(Staff::class);
-    }
-
-    /**
-     * Get the name of the user.
-     *
-     * @param  string $value
-     * @return string
-     */
-    public function getNameAttribute($value)
-    {
-        return $this->staff->name;
-    }
-
-    /**
-     * Get the role name of the user.
-     *
-     * @param  string $value
-     * @return string
-     */
-    public function getRoleAttribute($value)
-    {
-        return $this->staff->role->name;
+        return $this->belongsToMany(Access::class);
     }
 }
