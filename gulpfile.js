@@ -49,4 +49,7 @@ elixir(mix => {
 
     // Jquery Validation.
     mix.copy('resources/assets/js/plugins/validate/jquery.validate.min.js', 'public/js/jquery.validate.min.js');
+
+    // Modal Form Validate.
+    mix.scripts(['modal-form.js'], 'public/js/modal-form.js');
 });
