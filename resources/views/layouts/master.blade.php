@@ -10,9 +10,15 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/plugins.css') }}">
 
+        {{-- Extra styles --}}
+        @yield('styles')
+
         {{-- Scripts --}}
-        <script src="{{ asset('js/app.js') }}" type="text/javascript" charset="utf-8" defer></script>
-        <script src="{{ asset('js/plugins.js') }}" type="text/javascript" charset="utf-8" defer></script>
+        <script src="{{ asset('js/app.js') }}" type="text/javascript" charset="utf-8"></script>
+        <script src="{{ asset('js/plugins.js') }}" type="text/javascript" charset="utf-8" async></script>
+
+        {{-- Extra scripts --}}
+        @yield('script-top')
     </head>
     @yield('body')
 </html>

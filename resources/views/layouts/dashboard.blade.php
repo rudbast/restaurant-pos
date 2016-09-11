@@ -11,10 +11,10 @@
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                     <span class="clear">
                                         <span class="block m-t-xs">
-                                            <strong class="font-bold">@yield('user-name')</strong>
+                                            <strong class="font-bold">{{ auth()->user()->name }}</strong>
                                         </span>
                                         <span class="text-muted text-xs block">
-                                            @yield('user-role') <b class="caret"></b>
+                                            {{ auth()->user()->username }} <b class="caret"></b>
                                         </span>
                                     </span>
                                 </a>
@@ -22,34 +22,27 @@
                                 <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                     <li>
                                         <a href="{{ url('/logout') }}" onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                            Log out
+                                            document.getElementById('logout-form').submit();">
+                                            @lang('auth.logout')
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="logo-element">
-                                The Grapes
+                                {{ config('app.name') }}
                             </div>
                         </li>
 
-                        @include('partials.sidemenu', [
-                            'page' => '',
-                        ])
+                        @yield('sidemenu')
                     </ul>
                 </div>
             </nav>
 
             <div id="page-wrapper" class="gray-bg">
                 <div class="row border-bottom">
-                    <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
                         <div class="navbar-header">
-                            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-                            <form role="search" class="navbar-form-custom" method="post" action="#">
-                                <div class="form-group">
-                                    <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
-                                </div>
-                            </form>
+                            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i></a>
                         </div>
 
                         <ul class="nav navbar-top-links navbar-right">
@@ -57,11 +50,23 @@
                                 <a href="{{ url('/logout') }}"
                                     onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                    <i class="fa fa-sign-out"></i> Log out
+                                    <i class="fa fa-sign-out"></i> @lang('auth.logout')
                                 </a>
                             </li>
                         </ul>
                     </nav>
+                </div>
+
+                <div class="row wrapper border-bottom white-bg page-heading">
+                    <div class="col-lg-10">
+                        <h2>@yield('module-category')</h2>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <strong>@yield('module-title')</strong>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-lg-2"></div>
                 </div>
 
                 {{-- Logout Form --}}
@@ -71,16 +76,7 @@
 
                 <div class="wrapper wrapper-content animated fadeInRight">
                     <div class="row">
-                        <div class="col-lg-12">
-                            <div class="text-center m-t-lg">
-                                <h1>
-                                    Welcome in INSPINIA Static SeedProject
-                                </h1>
-                                <small>
-                                    It is an application skeleton for a typical web app. You can use it to quickly bootstrap your webapp projects and dev environment for these projects.
-                                </small>
-                            </div>
-                        </div>
+                        @yield('content')
                     </div>
                 </div>
 
@@ -91,5 +87,7 @@
                 </div>
             </div>
         </div>
+
+        @yield('script-bottom')
     </body>
 @endsection
