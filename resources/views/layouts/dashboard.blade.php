@@ -86,7 +86,7 @@
 
                 <div class="footer">
                     <div>
-                        <strong>Copyright</strong> The Grapes &copy; 2016
+                        <strong>Copyright</strong> {{ config('app.name') }} &copy; {{ date('Y') }}
                     </div>
                 </div>
             </div>
