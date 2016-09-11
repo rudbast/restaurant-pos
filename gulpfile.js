@@ -16,6 +16,7 @@ require('laravel-elixir-vue');
 elixir.config.sourcemaps = false;
 
 elixir(mix => {
+    /** Main */
     mix.sass('app.scss')
        .webpack('app.js');
 
@@ -32,6 +33,20 @@ elixir(mix => {
         'style.css'
     ], 'public/css/plugins.css');
 
-    mix.copy('resources/assets/fonts', 'public/fonts');
+    mix.copy('resources/assets/fonts/fontawesome', 'public/fonts');
+    mix.copy('resources/assets/fonts/bootstrap', 'public/fonts/bootstrap');
     mix.copy('resources/assets/css/patterns', 'public/css/patterns');
+
+    /** Extra */
+    // DataTables.
+    mix.copy('resources/assets/css/plugins/dataTables/datatables.min.css', 'public/css/datatables.min.css');
+    mix.copy('resources/assets/js/plugins/dataTables/datatables.min.js', 'public/js/datatables.min.js');
+
+    // Chosen-select.
+    mix.styles(['plugins/chosen/bootstrap-chosen.css'], 'public/css/bootstrap-chosen.css');
+    mix.scripts(['plugins/chosen/chosen.jquery.js'], 'public/js/chosen.jquery.js');
+    mix.copy('resources/assets/css/plugins/chosen/*.png', 'public/css');
+
+    // Jquery Validation.
+    mix.copy('resources/assets/js/plugins/validate/jquery.validate.min.js', 'public/js/jquery.validate.min.js');
 });
