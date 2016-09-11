@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'logout' => 'Log Out',
-    'login' => 'Log In',
-    'forgot' => 'Forgot password?'
+    'failed' => 'Informasi tidak sesuai.',
+    'throttle' => 'Batas percobaan terlewati. Silahkan coba lagi dalam :seconds detik.',
+    'logout' => 'Keluar',
+    'login' => 'Masuk',
+    'forgot' => 'Lupa kata sandi?'
 
 ];
