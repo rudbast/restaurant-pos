@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use DB;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -33,5 +35,41 @@ class User extends Authenticatable
     public function accesses()
     {
         return $this->belongsToMany(Access::class);
+    }
+
+    /**
+     * Check whether current account is admin.
+     *
+     * @return boolean
+     */
+    public function isAdmin()
+    {
+        return DB::table('access_user')
+            ->whereAccessId(Access::where('name', Access::ADMIN)->first()->id)
+            ->whereUserId($this->id)
+            ->count() > 0;
+    }
+
+    /**
+     * Check whether current account can view report.
+     *
+     * @return boolean
+     */
+    public function isReport()
+    {
+        return DB::table('access_user')
+            ->whereAccessId(Access::where('name', Access::SALES)->first()->id)
+            ->whereUserId($this->id)
+            ->count() > 0;
+    }
+
+    /**
+     * Mutator for password (hash).
+     *
+     * @param string $value
+     */
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
     }
 }
