@@ -37,29 +37,29 @@
                         class="btn btn-xs btn-success btn-outline modal-link modal-add">
                         @lang('form.action.add')
                     </a>
-
-                    <div id="modal-form-add" class="modal fade" aria-hidden="true">
-                        <div class="modal-dialog modal-sm">
-                            <div class="modal-content">
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-xs-12 text-center">
-                                            <h3>@lang('form.action.add')</h3>
-                                        </div>
-
-                                        @include('modules.users.form', [
-                                            'method' => 'post',
-                                            'editable' => true,
-                                            'update' => false,
-                                            'simple' => false,
-                                        ])
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /#modal-form-add -->
                 </div><!-- /.ibox-tools -->
             </div><!-- /.ibox-title -->
+
+            <div id="modal-form-add" class="modal fade" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xs-12 text-center">
+                                    <h3>@lang('form.action.add')</h3>
+                                </div>
+
+                                @include('modules.users.form', [
+                                    'method' => 'post',
+                                    'editable' => true,
+                                    'update' => false,
+                                    'simple' => false,
+                                ])
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /#modal-form-add -->
 
             <div class="ibox-content">
                 <div class="table-responsive">
