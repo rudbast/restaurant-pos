@@ -61,7 +61,7 @@ $ php artisan db:seed
 
 Required extensions:
 
-- urlrewrite.
+- urlrewrite
 
 ##### Virtual Host Configuration
 
