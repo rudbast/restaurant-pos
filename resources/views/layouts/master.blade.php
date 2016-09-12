@@ -15,7 +15,7 @@
 
         {{-- Scripts --}}
         <script src="{{ asset('js/app.js') }}" type="text/javascript" charset="utf-8"></script>
-        <script src="{{ asset('js/plugins.js') }}" type="text/javascript" charset="utf-8" async></script>
+        <script src="{{ asset('js/plugins.js') }}" type="text/javascript" charset="utf-8" defer></script>
 
         {{-- Extra scripts --}}
         @yield('script-top')

@@ -21,9 +21,9 @@
 @endsection
 
 @section('script-top')
-    <script src="{{ asset('js/datatables.min.js') }}" type="text/javascript" charset="utf-8" async></script>
-    <script src="{{ asset('js/chosen.jquery.js') }}" type="text/javascript" charset="utf-8" async></script>
-    <script src="{{ asset('js/jquery.validate.min.js') }}" type="text/javascript" charset="utf-8" async></script>
+    <script src="{{ asset('js/datatables.min.js') }}" type="text/javascript" charset="utf-8" defer></script>
+    <script src="{{ asset('js/chosen.jquery.js') }}" type="text/javascript" charset="utf-8" defer></script>
+    <script src="{{ asset('js/jquery.validate.min.js') }}" type="text/javascript" charset="utf-8" defer></script>
 @endsection
 
 @section('content')
