@@ -44,6 +44,9 @@
                     <small>
                         <strong>Copyright</strong> {{ config('app.name') }} &copy; {{ date('Y') }}
                     </small>
+                    <div>
+                        @include('partials.setlocale')
+                    </div>
                 </p>
             </div>
         </div>

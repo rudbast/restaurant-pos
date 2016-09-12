@@ -83,6 +83,9 @@
                 <div class="footer">
                     <div>
                         <strong>Copyright</strong> {{ config('app.name') }} &copy; {{ date('Y') }}
+                        <div class="pull-right">
+                            @include('partials.setlocale')
+                        </div>
                     </div>
                 </div>
             </div>

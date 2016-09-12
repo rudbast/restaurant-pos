@@ -17,7 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('home', 'HomeController@index');
+
+Route::get('lang/{lang}', 'LanguageController@select');
 
 Route::group(['prefix' => 'users'], function () {
     Route::get('/', 'UsersController@index');
