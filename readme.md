@@ -73,7 +73,8 @@ Required extensions:
     ServerAlias www.domain.com
 
     DocumentRoot {full project path}/public
-    <Directory "{full project path}/public">
+
+    <Directory "{full project path}">
         AllowOverride all
     </Directory>
 
