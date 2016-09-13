@@ -42,8 +42,6 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary block full-width m-b">@lang('auth.login')</button>
-
-                    <a href="{{ url('/password/reset') }}"><small>@lang('auth.forgot')</small></a>
                 </form>
 
                 <p class="m-t">
