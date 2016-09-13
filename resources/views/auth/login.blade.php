@@ -16,7 +16,13 @@
                     {{ csrf_field() }}
 
                     <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
-                        <input name="username" type="text" class="form-control" placeholder="@lang('form.user.username')" required="">
+                        <input id="username" name="username" type="text" class="form-control" placeholder="@lang('form.user.username')" required="">
+
+                        <script>
+                            $(function () {
+                                $('#username').focus();
+                            });
+                        </script>
 
                         @if ($errors->has('username'))
                             <span class="help-block">
