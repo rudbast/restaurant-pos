@@ -9,8 +9,11 @@ return [
     */
 
     'administration' => 'Administration',
-    'users' => 'User Accounts',
-    'payments' => 'Payment Types',
-    'sales' => 'Sales Report',
+    'users'          => 'User Accounts',
+    'payments'       => 'Payment Types',
+    'menus'          => 'Product Menus',
+    'sales'          => 'Sales Report',
+    'orders'         => 'Orders',
+    'checkout'       => 'Checkouts',
 
 ];

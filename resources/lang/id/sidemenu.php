@@ -9,8 +9,11 @@ return [
     */
 
     'administration' => 'Administrasi',
-    'users' => 'Akun Pengguna',
-    'payments' => 'Tipe Pembayaran',
-    'sales' => 'Laporan Penjualan',
+    'users'          => 'Akun Pengguna',
+    'payments'       => 'Tipe Pembayaran',
+    'menu'           => 'Menu Produk',
+    'sales'          => 'Laporan Penjualan',
+    'orders'         => 'Pemesanan',
+    'checkout'       => 'Pembayaran',
 
 ];

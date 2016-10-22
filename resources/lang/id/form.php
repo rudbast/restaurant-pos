@@ -26,5 +26,12 @@ return [
     ],
     'access' => [
         'name' => 'Hak Akses'
-    ]
+    ],
+    'category' => [
+        'name' => 'Nama Kategori'
+    ],
+    'menu' => [
+        'name'  => 'Nama Menu',
+        'price' => 'Harga',
+    ],
 ];

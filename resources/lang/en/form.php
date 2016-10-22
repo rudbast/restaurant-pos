@@ -26,5 +26,12 @@ return [
     ],
     'access' => [
         'name' => 'Accessibility'
-    ]
+    ],
+    'category' => [
+        'name' => 'Category Name'
+    ],
+    'menu' => [
+        'name'  => 'Menu Name',
+        'price' => 'Price',
+    ],
 ];
