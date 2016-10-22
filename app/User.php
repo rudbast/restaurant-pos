@@ -55,10 +55,36 @@ class User extends Authenticatable
      *
      * @return boolean
      */
-    public function isReport()
+    public function canReport()
     {
         return DB::table('access_user')
             ->whereAccessId(Access::where('name', Access::SALES)->first()->id)
+            ->whereUserId($this->id)
+            ->count() > 0;
+    }
+
+    /**
+     * Check whether current account can do orders.
+     *
+     * @return boolean
+     */
+    public function canOrder()
+    {
+        return DB::table('access_user')
+            ->whereAccessId(Access::where('name', Access::WAITER)->first()->id)
+            ->whereUserId($this->id)
+            ->count() > 0;
+    }
+
+    /**
+     * Check whether current account checkout orders (receive payment).
+     *
+     * @return boolean
+     */
+    public function canCheckout()
+    {
+        return DB::table('access_user')
+            ->whereAccessId(Access::where('name', Access::CASHIER)->first()->id)
             ->whereUserId($this->id)
             ->count() > 0;
     }

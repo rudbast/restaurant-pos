@@ -30,7 +30,15 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('sales', function ($user) {
-            return $user->isAdmin() || $user->isReport();
+            return $user->isAdmin() || $user->canReport();
+        });
+
+        Gate::define('orders', function ($user) {
+            return $user->isAdmin() || $user->canOrder();
+        });
+
+        Gate::define('checkout', function ($user) {
+            return $user->isAdmin() || $user->canCheckout();
         });
     }
 }
