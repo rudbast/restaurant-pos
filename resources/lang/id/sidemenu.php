@@ -11,7 +11,7 @@ return [
     'administration' => 'Administrasi',
     'users'          => 'Akun Pengguna',
     'payments'       => 'Tipe Pembayaran',
-    'menu'           => 'Menu Produk',
+    'menus'          => 'Menu Produk',
     'sales'          => 'Laporan Penjualan',
     'orders'         => 'Pemesanan',
     'checkout'       => 'Pembayaran',
