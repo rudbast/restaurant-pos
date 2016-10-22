@@ -24,3 +24,7 @@ Route::get('lang/{lang}', 'LanguageController@select');
 Route::resource('users', 'UsersController', ['except' => [
     'create', 'edit'
 ]]);
+
+Route::resource('menus', 'MenusController', ['except' => [
+    'create', 'edit'
+]]);
