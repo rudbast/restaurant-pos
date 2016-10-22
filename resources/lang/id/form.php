@@ -34,4 +34,9 @@ return [
         'name'  => 'Nama Menu',
         'price' => 'Harga',
     ],
+    'payment' => [
+        'name' => 'Tipe Pembayaran',
+        'customer_fee' => 'Biaya Tanggungan Pelanggan',
+        'provider_fee' => 'Biaya Penyedia Layanan',
+    ],
 ];

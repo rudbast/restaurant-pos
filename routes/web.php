@@ -28,3 +28,7 @@ Route::resource('users', 'UsersController', ['except' => [
 Route::resource('menus', 'MenusController', ['except' => [
     'create', 'edit'
 ]]);
+
+Route::resource('payments', 'PaymentsController', ['except' => [
+    'create', 'edit'
+]]);

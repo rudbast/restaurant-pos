@@ -14,7 +14,7 @@
             </li>
 
             <li class="{{ $submenu == 'payments' ? 'active' : '' }}">
-                <a href="{{ '' }}">@lang('sidemenu.payments')</a>
+                <a href="{{ action('PaymentsController@index') }}">@lang('sidemenu.payments')</a>
             </li>
         </ul>
     </li>
