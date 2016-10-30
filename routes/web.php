@@ -32,3 +32,7 @@ Route::resource('menus', 'MenusController', ['except' => [
 Route::resource('payments', 'PaymentsController', ['except' => [
     'create', 'edit'
 ]]);
+
+Route::resource('orders', 'OrdersController', ['except' => [
+    'create', 'edit'
+]]);

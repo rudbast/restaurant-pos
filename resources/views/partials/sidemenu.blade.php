@@ -31,7 +31,7 @@
 
 @can('orders')
     <li class="{{ $menu == 'orders' ? 'active' : '' }}">
-        <a href="{{ '' }}">
+        <a href="{{ action('OrdersController@index') }}">
             <i class="fa fa-cutlery"></i>
             <span class="nav-label">@lang('sidemenu.orders')</span>
         </a>
